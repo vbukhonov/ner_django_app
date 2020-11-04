@@ -5,6 +5,7 @@
 {% block content %}
     <h1>Please, press the button to process your files.</h1>
     <form action="/ner_django/process_files/" method="post">
+        {% csrf_token %}
         <input type="submit" value="Run Pipeline">
     </form>
 {% endblock %}
