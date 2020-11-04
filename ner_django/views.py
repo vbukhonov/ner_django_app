@@ -8,3 +8,7 @@ def index(request):
 
 def process_files(request):
     return HttpResponse("Success!")
+
+
+def clean_mongo_database(request):
+    return HttpResponse("MongoDB is cleaned.")

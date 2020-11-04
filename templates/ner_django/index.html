@@ -8,4 +8,9 @@
         {% csrf_token %}
         <input type="submit" value="Run Pipeline">
     </form>
+    <br/>
+    <form action="/ner_django/clean_mongo_database/" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Clean MongoDB">
+    </form>
 {% endblock %}
