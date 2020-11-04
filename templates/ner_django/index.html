@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block title %}Homepage{% endblock %}
+
+{% block content %}
+    <h1>Please, press the button to process your files.</h1>
+    <form action="/ner/process_files/" method="post">
+        <input type="submit" value="Run Pipeline">
+    </form>
+{% endblock %}
