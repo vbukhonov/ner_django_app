@@ -2,4 +2,3 @@ Django
 spacy
 spacy-lookups-data
 pymongo
-django-progressbarupload

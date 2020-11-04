@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'spacy',
     'spacy_lookups_data',
     'pymongo',
-    'progressbarupload'
 ]
 
 MIDDLEWARE = [
