@@ -38,6 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ner_django.apps.NerDjangoConfig',
+    'spacy',
+    'spacy_lookups_data',
+    'pymongo',
+    'progressbarupload'
 ]
 
 MIDDLEWARE = [
