@@ -1,4 +1,4 @@
-#Simple NER application built on Django.
+# Simple NER application built on Django.
 
 This is a simple application which works on [Django](https://www.djangoproject.com/) 
 engine for providing access via REST API. The technical information 
