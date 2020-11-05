@@ -125,5 +125,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # MongoDB settings
-MONGO_DB_NAME = os.environ.get("MONGO_DB_NAME")
-MONGO_DB_URI = os.environ.get("MONGO_DB_URI")
+MONGO_DB_NAME = os.environ.get("MONGO_DB_NAME", "ner-db")
+MONGO_DB_URI = os.environ.get("MONGO_DB_URI", "mongodb://localhost:27017")
