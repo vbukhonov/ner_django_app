@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Homepage{% endblock %}
+
+{% block content %}
+    <h1>Please, press the button to process your files.</h1>
+    <form action="/ner_django/process_files/" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Run Pipeline">
+    </form>
+    <br/>
+    <form action="/ner_django/clean_mongo_database/" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Clean MongoDB">
+    </form>
+{% endblock %}
