@@ -1,5 +1,4 @@
 import datetime
-import json
 from xml.etree import ElementTree
 from zipfile import ZipFile
 
@@ -16,10 +15,9 @@ def process_archive(path, mongodb):
                 application_document_id, year, title, abstract, description = (
                     process_xml_patent(patent_xml_file.read())
                 )
-                # Run NER over abstract and
-                abstract_and_description = "{}\n{}".format(abstract,
-                                                           description)
-                ners_as_json = perform_ner(abstract_and_description)
+                # Run NER over abstract and description.
+                abstract_ners_as_json = perform_ner(abstract)
+                description_ners_as_json = perform_ner(description)
                 
                 # Persist everything in MongoDB.
                 mongodb.patents.insert_one(
@@ -28,7 +26,8 @@ def process_archive(path, mongodb):
                         "year": year,
                         "title": title,
                         "abstract": abstract,
-                        "ners_as_json": json.dumps(ners_as_json)
+                        "abstract_ners_as_json": abstract_ners_as_json,
+                        "description_ners_as_json": description_ners_as_json
                     }
                 )
                 if settings.DEBUG:
