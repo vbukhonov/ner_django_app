@@ -123,3 +123,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# MongoDB settings
+MONGO_DB_NAME = os.environ.get("MONGO_DB_NAME")
+MONGO_DB_URI = os.environ.get("MONGO_DB_URI")
